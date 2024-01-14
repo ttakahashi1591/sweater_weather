@@ -18,7 +18,8 @@ RSpec.describe GeocodingService, :vcr do
     
     expect(coordinates).to have_key(:lat)
     expect(coordinates[:lat]).to be_a(Float)
-    expect(coordinates).to have_key(:lon)
-    expect(coordinates[:lon]).to be_a(Float)
+
+    expect(coordinates).to have_key(:lng)
+    expect(coordinates[:lng]).to be_a(Float)
   end
 end
