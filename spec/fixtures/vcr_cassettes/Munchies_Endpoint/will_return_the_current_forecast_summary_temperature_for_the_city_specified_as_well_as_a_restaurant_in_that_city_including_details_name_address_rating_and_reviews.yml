@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.mapquestapi.com/geocoding/v1/address?key=<GEOCODING_KEY>&location=Pueblo,%20CO
+    uri: https://www.mapquestapi.com/geocoding/v1/address?key=<GEOCODING_KEY>&location=pueblo,co
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 15 Jan 2024 19:11:53 GMT
+      - Mon, 15 Jan 2024 19:11:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '798'
+      - '797'
       Connection:
       - keep-alive
       X-Ratelimit-Limit-2628000:
@@ -35,20 +35,20 @@ http_interactions:
       Ratelimit-Remaining:
       - '999999870'
       Ratelimit-Reset:
-      - '226088'
+      - '226085'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - f1070bb0-b3d9-11ee-9392-cdc181db240d
+      - f2796060-b3d9-11ee-b75e-59a1c9563f30
       Access-Control-Allow-Origin:
       - "*"
       Etag:
-      - W/"31e-B22/EJwtvizOxi3AadQ99B9wGdg"
+      - W/"31d-7Cj7ZBAOLf/RgKiay/wj2IwksR4"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyNCBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDI0IE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJQdWVibG8sIENPIn0sImxvY2F0aW9ucyI6W3sic3RyZWV0IjoiIiwiYWRtaW5BcmVhNiI6IiIsImFkbWluQXJlYTZUeXBlIjoiTmVpZ2hib3Job29kIiwiYWRtaW5BcmVhNSI6IlB1ZWJsbyIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImFkbWluQXJlYTQiOiJQdWVibG8iLCJhZG1pbkFyZWE0VHlwZSI6IkNvdW50eSIsImFkbWluQXJlYTMiOiJDTyIsImFkbWluQXJlYTNUeXBlIjoiU3RhdGUiLCJhZG1pbkFyZWExIjoiVVMiLCJhZG1pbkFyZWExVHlwZSI6IkNvdW50cnkiLCJwb3N0YWxDb2RlIjoiIiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiQTVYQVgiLCJnZW9jb2RlUXVhbGl0eSI6IkNJVFkiLCJkcmFnUG9pbnQiOmZhbHNlLCJzaWRlT2ZTdHJlZXQiOiJOIiwibGlua0lkIjoiMCIsInVua25vd25JbnB1dCI6IiIsInR5cGUiOiJzIiwibGF0TG5nIjp7ImxhdCI6MzguMjYzNzUsImxuZyI6LTEwNC42MTI1Mn0sImRpc3BsYXlMYXRMbmciOnsibGF0IjozOC4yNjM3NSwibG5nIjotMTA0LjYxMjUyfSwibWFwVXJsIjoiIn1dfV19
-  recorded_at: Mon, 15 Jan 2024 19:11:53 GMT
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyNCBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDI0IE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJwdWVibG8sY28ifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiUHVlYmxvIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IlB1ZWJsbyIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiIiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6Ik4iLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOC4yNjM3NSwibG5nIjotMTA0LjYxMjUyfSwiZGlzcGxheUxhdExuZyI6eyJsYXQiOjM4LjI2Mzc1LCJsbmciOi0xMDQuNjEyNTJ9LCJtYXBVcmwiOiIifV19XX0=
+  recorded_at: Mon, 15 Jan 2024 19:11:55 GMT
 - request:
     method: get
     uri: https://api.yelp.com/v3/businesses/search?latitude=38.26375&limit=1&longitude=-104.61252&term=italian
@@ -74,35 +74,35 @@ http_interactions:
       Content-Type:
       - application/json
       X-Routing-Service:
-      - routing-canary--useast1-5d8cf7fff-gqkjh; site=public_api_v3
-      Ratelimit-Dailylimit:
-      - '500.0'
-      Server:
-      - envoy
-      Ratelimit-Remaining:
-      - '471.0'
-      X-B3-Sampled:
-      - '0'
+      - routing-main--useast1-74f644dc4b-tj4d6; site=public_api_v3
       Ratelimit-Resettime:
       - '2024-01-16T00:00:00+00:00'
+      X-B3-Sampled:
+      - '0'
+      Server:
+      - envoy
+      Ratelimit-Dailylimit:
+      - '500.0'
       X-Zipkin-Id:
-      - b942f7f266908158
+      - c808464ca29d6258
+      Ratelimit-Remaining:
+      - '470.0'
       X-Mode:
       - ro
       X-Proxied:
-      - 10-65-176-91-useast1bprod
+      - 10-65-127-198-useast1aprod
       X-Extlb:
-      - 10-65-176-91-useast1bprod
+      - 10-65-127-198-useast1aprod
       Cache-Control:
       - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 15 Jan 2024 19:11:53 GMT
+      - Mon, 15 Jan 2024 19:11:55 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8280-DEN
+      - cache-den8269-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -126,7 +126,7 @@ http_interactions:
         "state": "CO", "display_address": ["126 S Union Ave", "Pueblo, CO 81003"]},
         "phone": "+17192530126", "display_phone": "(719) 253-0126", "distance": 103.74927346913104}],
         "total": 50, "region": {"center": {"longitude": -104.61252, "latitude": 38.26375}}}'
-  recorded_at: Mon, 15 Jan 2024 19:11:53 GMT
+  recorded_at: Mon, 15 Jan 2024 19:11:55 GMT
 - request:
     method: get
     uri: http://api.weatherapi.com/v1/forecast.json?days=5&key=<WEATHER_KEY>&q=38.26375,-104.61252
@@ -146,7 +146,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 15 Jan 2024 19:11:53 GMT
+      - Mon, 15 Jan 2024 19:11:55 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -186,7 +186,7 @@ http_interactions:
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 7fa7de511de80ff7bd565637619bcbdc
+      - da50b1dac6493047cd3be947e10c6510
       Cdn-Cache:
       - HIT
     body:
@@ -358,5 +358,5 @@ http_interactions:
         21:00","temp_c":-5.1,"temp_f":22.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.0,"wind_kph":3.2,"wind_degree":53,"wind_dir":"NE","pressure_mb":1026.0,"pressure_in":30.29,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":76,"cloud":13,"feelslike_c":-6.8,"feelslike_f":19.8,"windchill_c":-6.8,"windchill_f":19.8,"heatindex_c":-5.1,"heatindex_f":22.9,"dewpoint_c":-8.8,"dewpoint_f":16.2,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":3.8,"gust_kph":6.1,"uv":1.0},{"time_epoch":1705726800,"time":"2024-01-19
         22:00","temp_c":-5.4,"temp_f":22.2,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":44,"wind_dir":"NE","pressure_mb":1025.0,"pressure_in":30.28,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":78,"cloud":12,"feelslike_c":-7.1,"feelslike_f":19.1,"windchill_c":-7.1,"windchill_f":19.1,"heatindex_c":-5.4,"heatindex_f":22.2,"dewpoint_c":-8.7,"dewpoint_f":16.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.3,"gust_kph":6.9,"uv":1.0},{"time_epoch":1705730400,"time":"2024-01-19
         23:00","temp_c":-5.6,"temp_f":21.9,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":2.5,"wind_kph":4.0,"wind_degree":70,"wind_dir":"ENE","pressure_mb":1025.0,"pressure_in":30.27,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":80,"cloud":14,"feelslike_c":-7.7,"feelslike_f":18.2,"windchill_c":-7.7,"windchill_f":18.2,"heatindex_c":-5.6,"heatindex_f":21.9,"dewpoint_c":-8.6,"dewpoint_f":16.5,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":4.8,"gust_kph":7.8,"uv":1.0}]}]}}'
-  recorded_at: Mon, 15 Jan 2024 19:11:53 GMT
+  recorded_at: Mon, 15 Jan 2024 19:11:55 GMT
 recorded_with: VCR 6.2.0

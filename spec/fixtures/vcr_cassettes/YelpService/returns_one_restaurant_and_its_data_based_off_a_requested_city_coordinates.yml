@@ -24,36 +24,36 @@ http_interactions:
       - keep-alive
       Content-Type:
       - application/json
+      X-Routing-Service:
+      - routing-main--useast1-74f644dc4b-l6jpl; site=public_api_v3
       Ratelimit-Dailylimit:
       - '500.0'
-      X-Routing-Service:
-      - routing-main--useast1-74f644dc4b-f5lrv; site=public_api_v3
-      X-B3-Sampled:
-      - '0'
       Ratelimit-Remaining:
-      - '481.0'
+      - '469.0'
       X-Zipkin-Id:
-      - 9c9fb78a601b277c
+      - d59b967f891d45cd
       Ratelimit-Resettime:
       - '2024-01-16T00:00:00+00:00'
+      X-B3-Sampled:
+      - '0'
       Server:
       - envoy
       X-Mode:
       - ro
       X-Proxied:
-      - 10-65-79-132-useast1aprod
+      - 10-65-166-92-useast1bprod
       X-Extlb:
-      - 10-65-79-132-useast1aprod
+      - 10-65-166-92-useast1bprod
       Cache-Control:
       - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 15 Jan 2024 17:26:39 GMT
+      - Mon, 15 Jan 2024 19:11:57 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8248-DEN
+      - cache-den8231-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -77,5 +77,5 @@ http_interactions:
         "state": "CO", "display_address": ["126 S Union Ave", "Pueblo, CO 81003"]},
         "phone": "+17192530126", "display_phone": "(719) 253-0126", "distance": 1526.2835776066295}],
         "total": 50, "region": {"center": {"longitude": -104.604607, "latitude": 38.276463}}}'
-  recorded_at: Mon, 15 Jan 2024 17:26:39 GMT
+  recorded_at: Mon, 15 Jan 2024 19:11:57 GMT
 recorded_with: VCR 6.2.0

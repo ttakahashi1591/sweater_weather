@@ -9,19 +9,27 @@ class MunchiesFacade
     restaurant_data = yelp_service.return_restaurant(coordinates[:lat], coordinates[:lng], @type)[:businesses][0]
     forecast_data = weather_service.forecast(coordinates)[:current]
 
-    {
-      destination_city: "#{restaurant_data[:location][:city]}, #{restaurant_data[:location][:state]}",
-      forecast: {
-        summary: forecast_data[:condition][:text],
-        temperature: forecast_data[:temp_f].to_s
-      },
-      restaurant: {
-        name: restaurant_data[:name],
-        address: restaurant_data[:location][:display_address].join(", "),
-        rating: restaurant_data[:rating],
-        reviews: restaurant_data[:review_count]
+    result_hash = {
+      data: {
+        id: nil,
+        type: "munchie",
+        attributes: {
+          destination_city: "#{restaurant_data[:location][:city]}, #{restaurant_data[:location][:state]}",
+          forecast: {
+            summary: forecast_data[:condition][:text],
+            temperature: forecast_data[:temp_f].to_s
+          },
+          restaurant: {
+            name: restaurant_data[:name],
+            address: restaurant_data[:location][:display_address].join(", "),
+            rating: restaurant_data[:rating],
+            reviews: restaurant_data[:review_count]
+          }
+        }
       }
     }
+
+    result_hash
   end
 
   private

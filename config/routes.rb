@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
-      resources :munchies, only: [:show]
+      resources :munchies, only: [:index]
     end
   end
 end
