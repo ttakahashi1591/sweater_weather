@@ -78,4 +78,71 @@ http_interactions:
         "phone": "+17192530126", "display_phone": "(719) 253-0126", "distance": 1526.2835776066295}],
         "total": 50, "region": {"center": {"longitude": -104.604607, "latitude": 38.276463}}}'
   recorded_at: Mon, 15 Jan 2024 16:04:28 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/search?latitude=38.276463&limit=1&longitude=-104.604607&term=italian
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer iSNun4FtFrYjlcsMaIP0MGS3apuOkWoL8TGfTNIrDeSCewCvnO_gleGzTty3bY1EIepCGJ1fZIl91oWTFFUUsrfv3P1rvyDoloL09LZ-4RoZhDAQs9PB4dQ2RLakZXYx
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - openresty/1.21.4.1
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Zipkin-Id:
+      - 8f51936b1e7b3bc8
+      X-B3-Sampled:
+      - '0'
+      X-Routing-Service:
+      - routing-main--useast1-74f644dc4b-ll4cp; site=mobile_api_v1
+      Content-Security-Policy:
+      - script-src 'none';
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-127-198-useast1aprod
+      X-Extlb:
+      - 10-65-127-198-useast1aprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 15 Jan 2024 16:34:28 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8249-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <html>
+          <head><title>Bad Request</title></head>
+          <body>
+            <h1>400 Bad Request</h1>
+            <p>Error served by routing service running on <tt>routing-main--useast1-74f644dc4b-ll4cp</tt></p>
+          </body>
+        </html>
+  recorded_at: Mon, 15 Jan 2024 16:34:28 GMT
 recorded_with: VCR 6.2.0

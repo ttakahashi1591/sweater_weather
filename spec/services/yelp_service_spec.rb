@@ -9,7 +9,7 @@ RSpec.describe YelpService, :vcr do
 
   it "returns one restaurant and its data based off a requested city coordinates" do
     service = YelpService.new
-
+    
     response = service.return_restaurant(38.276463, -104.604607, "italian")
 
     expect(response).to be_a(Hash)
