@@ -3,9 +3,10 @@ require "rails_helper"
 RSpec.describe GeocodingFacade, :vcr do
   it "will return the latitude and longitude data for a requested location" do
     facade = GeocodingFacade.new
-
+    
     coordinates = facade.coordinates("cincinatti,oh")
-
+    
+    require 'pry'; binding.pry
     expect(coordinates).to be_a(Hash)
     expect(coordinates.count).to eq(2)
 

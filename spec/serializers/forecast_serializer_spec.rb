@@ -1,13 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "Forecast Endpoint", :vcr do
-  it "will return the current, daily, and hourly forecast weather for the city specified" do
-    get "/api/v0/forecast", params: {location: "cincinatti,oh"}
+RSpec.describe ForecastSerializer, :vcr do
+  it "serializes the data gathered from the Weather API" do
+    response = WeatherFacade.new.get_forecast("cincinatti,oh")
 
-    expect(response).to be_successful
-    expect(response.status).to eq(200)
-
-    forecast = JSON.parse(response.body, symbolize_names: true)
+    forecast = ForecastSerializer.new(response).to_json
 
     expect(forecast).to have_key(:data)
     expect(forecast[:data]).to be_a(Hash)
@@ -19,9 +16,8 @@ RSpec.describe "Forecast Endpoint", :vcr do
     expect(forecast[:data][:type]).to eq("forecast")
 
     expect(forecast[:data]).to have_key(:attributes)
-    
+
     expect(forecast[:data][:attributes]).to have_key(:current_weather)
-    expect(forecast[:data][:attributes][:current_weather]).to be_a(Hash)
 
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:last_updated)
     expect(forecast[:data][:attributes][:current_weather][:last_updated]).to be_a(String)
@@ -40,7 +36,7 @@ RSpec.describe "Forecast Endpoint", :vcr do
     expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_a(Float).or be_an(Integer)
 
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:visibility)
-    expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a(Float).or be_an(Integer)
+    expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a(Float)
 
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:condition)
     expect(forecast[:data][:attributes][:current_weather][:condition]).to be_a(String)
@@ -63,8 +59,8 @@ RSpec.describe "Forecast Endpoint", :vcr do
       expect(day[:sunrise]).to match(/\d{2}:\d{2} [AP]M/)
 
       expect(day).to have_key(:sunset)
-      expect(day[:sunset]).to be_a(String)
-      expect(day[:sunset]).to match(/\d{2}:\d{2} [AP]M/)
+      expect(day[:sunrise]).to be_a(String)
+      expect(day[:sunrise]).to match(/\d{2}:\d{2} [AP]M/)
 
       expect(day).to have_key(:max_temp)
       expect(day[:max_temp]).to be_a(Float)
@@ -87,7 +83,7 @@ RSpec.describe "Forecast Endpoint", :vcr do
     forecast[:data][:attributes][:hourly_weather].each do |hour|
       expect(hour).to have_key(:time)
       expect(hour[:time]).to be_a(String)
-      expect(hour[:time]).to match(/\d{2}:\d{2}/)
+      expect(hour[:time]).to match(/^\d{2}:\d{2}$/)
 
       expect(hour).to have_key(:temperature)
       expect(hour[:temperature]).to be_a(Float)

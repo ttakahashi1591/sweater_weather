@@ -10,7 +10,7 @@ class WeatherService < ApplicationService
   end 
 
   def forecast(coordinates, days)
-    get_url("forecast.json") do |faraday|
+    json_parse(get_url("/forecast.json")) do |faraday|
       faraday.params[:q] = "#{coordinates[:lat]},#{coordinates[:lng]}"
       faraday.params[:days] = days
     end
