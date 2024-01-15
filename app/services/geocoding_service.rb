@@ -1,4 +1,4 @@
-class GeocodingService
+class GeocodingService < ApplicationService
   def conn
     Faraday.new("https://www.mapquestapi.com") do |faraday|
       faraday.params["key"] = Rails.application.credentials.geocoding[:key]
