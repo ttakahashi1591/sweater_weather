@@ -6,7 +6,6 @@ RSpec.describe GeocodingFacade, :vcr do
     
     coordinates = facade.coordinates("cincinatti,oh")
     
-    require 'pry'; binding.pry
     expect(coordinates).to be_a(Hash)
     expect(coordinates.count).to eq(2)
 

@@ -10,8 +10,8 @@ class GeocodingService < ApplicationService
   end
 
   def location_data(location)
-    json_parse(get_url("geocoding/v1/address")) do |faraday|
-      faraday.params[:location] = location
-    end
+    response = get_url("geocoding/v1/address?location=#{location}")
+    
+    json_parse(response)
   end
 end

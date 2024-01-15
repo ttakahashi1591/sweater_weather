@@ -12,28 +12,26 @@ RSpec.describe WeatherService, :vcr do
 
     response = service.forecast({lat: 39.11, lng: -84.5})
 
-    data = JSON.parse(response.body, symbolize_names: true)
+    expect(response).to have_key(:location)
+    expect(response).to have_key(:current)
 
-    expect(data).to have_key(:location)
-    expect(data).to have_key(:current)
+    expect(response[:current]).to have_key(:last_updated)
+    expect(response[:current]).to have_key(:temp_f)
+    expect(response[:current]).to have_key(:feelslike_f)
+    expect(response[:current]).to have_key(:humidity)
+    expect(response[:current]).to have_key(:uv)
+    expect(response[:current]).to have_key(:vis_miles)
+    expect(response[:current]).to have_key(:condition)
 
-    expect(data[:current]).to have_key(:last_updated)
-    expect(data[:current]).to have_key(:temp_f)
-    expect(data[:current]).to have_key(:feelslike_f)
-    expect(data[:current]).to have_key(:humidity)
-    expect(data[:current]).to have_key(:uv)
-    expect(data[:current]).to have_key(:vis_miles)
-    expect(data[:current]).to have_key(:condition)
+    expect(response[:current][:condition]).to have_key(:text)
+    expect(response[:current][:condition]).to have_key(:icon)
 
-    expect(data[:current][:condition]).to have_key(:text)
-    expect(data[:current][:condition]).to have_key(:icon)
+    expect(response).to have_key(:forecast)
+    expect(response[:forecast]).to have_key(:forecastday)
+    expect(response[:forecast][:forecastday]).to be_an(Array)
+    expect(response[:forecast][:forecastday].count).to eq(5)
 
-    expect(data).to have_key(:forecast)
-    expect(data[:forecast]).to have_key(:forecastday)
-    expect(data[:forecast][:forecastday]).to be_an(Array)
-    expect(data[:forecast][:forecastday].count).to eq(5)
-
-    data[:forecast][:forecastday].each do |day|
+    response[:forecast][:forecastday].each do |day|
       expect(day).to have_key(:date)
       expect(day).to have_key(:astro)
 
