@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Munchies Endpoint" do
   it "will return the current forecast summary & temperature for the city specified as well as a restaurant in that city including details: name, address, rating, and reviews" do
-	get "/api/v1/munchies", params: {destination: "pueblo,co", food: "italian"}
+	  get "/api/v1/munchies", params: {destination: "pueblo,co", food: "italian"}
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
