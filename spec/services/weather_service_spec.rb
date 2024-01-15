@@ -10,7 +10,7 @@ RSpec.describe WeatherService, :vcr do
   it "returns current weather as well as the hourly weather for the next 5 days for a requested city" do
     service = WeatherService.new
 
-    response = service.forecast("cincinatti,oh")
+    response = service.forecast({lat: 39.11, lng: -84.5})
 
     data = JSON.parse(response.body, symbolize_names: true)
 
@@ -39,7 +39,7 @@ RSpec.describe WeatherService, :vcr do
 
       expect(day[:astro]).to have_key(:sunrise)
       expect(day[:astro]).to have_key(:sunset)
-      
+
       expect(day).to have_key(:day)
       expect(day[:day]).to have_key(:maxtemp_f)
       expect(day[:day]).to have_key(:mintemp_f)
