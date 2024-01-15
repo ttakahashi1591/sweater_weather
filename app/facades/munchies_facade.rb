@@ -1,19 +1,19 @@
 class MunchiesFacade
-  def initialize(destination, food)
-    @destination = destination
-    @food = food
+  def initialize(location, type)
+    @location = location
+    @type = type
   end
 
   def munchies_data
-    coordinates = geocoding_service.location_data(@destination)[:results][0][:locations][0][:displayLatLng]
-    restaurant_data = yelp_service.return_restaurant(coordinates[:lat], coordinates[:lng], @food)[:businesses][0]
+    coordinates = geocoding_service.location_data(@location)[:results][0][:locations][0][:displayLatLng]
+    restaurant_data = yelp_service.return_restaurant(coordinates[:lat], coordinates[:lng], @type)[:businesses][0]
     forecast_data = weather_service.forecast(coordinates)[:current]
 
     {
       destination_city: "#{restaurant_data[:location][:city]}, #{restaurant_data[:location][:state]}",
       forecast: {
         summary: forecast_data[:condition][:text],
-        temperature: forecast_data[:temp_f]
+        temperature: forecast_data[:temp_f].to_s
       },
       restaurant: {
         name: restaurant_data[:name],

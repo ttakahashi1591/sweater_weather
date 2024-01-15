@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe ForecastSerializer, :vcr do
-  it "serializes the data gathered from the Weather API" do
+  it "serializes the data gathered from the Weather API and Mapquest API" do
     response = WeatherFacade.new.get_forecast("cincinatti,oh")
 
     forecast = ForecastSerializer.new(response).to_json

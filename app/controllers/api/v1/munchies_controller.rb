@@ -1,7 +1,8 @@
 class Api::V1::MunchiesController < ApplicationController
   def show
+    require 'pry'; binding.pry
 	  munchies = MunchiesFacade.munchies_data(params[:destination], params[:food])
 
-    render json: MunchiesSerializer.new(munchies).as_json
+    render json: MunchieSerializer.new(munchies)
   end
 end

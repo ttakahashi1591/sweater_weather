@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '1000000000'
       X-Ratelimit-Remaining-2628000:
-      - '999999898'
+      - '999999899'
       Ratelimit-Limit:
       - '1000000000'
       Ratelimit-Remaining:
-      - '999999898'
+      - '999999899'
       Ratelimit-Reset:
-      - '232408'
+      - '232407'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 3a19b3c0-b3cb-11ee-a1f9-3940980a923d
+      - 3a932980-b3cb-11ee-9392-cdc181db240d
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -68,7 +68,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 15 Jan 2024 17:26:33 GMT
+      - Mon, 15 Jan 2024 17:26:38 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -108,7 +108,7 @@ http_interactions:
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 78908d5eee8e631d1dcb4b075d378ef9
+      - 4efbbcd55ec90b40ced1aeb6f9905a19
       Cdn-Cache:
       - HIT
     body:
@@ -284,5 +284,5 @@ http_interactions:
         22:00","temp_c":-11.7,"temp_f":11.0,"is_day":0,"condition":{"text":"Cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/119.png","code":1006},"wind_mph":9.6,"wind_kph":15.5,"wind_degree":292,"wind_dir":"WNW","pressure_mb":1029.0,"pressure_in":30.38,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":80,"cloud":57,"feelslike_c":-18.9,"feelslike_f":-2.0,"windchill_c":-18.9,"windchill_f":-2.0,"heatindex_c":-11.7,"heatindex_f":11.0,"dewpoint_c":-14.5,"dewpoint_f":5.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":12.8,"gust_kph":20.5,"uv":1.0},{"time_epoch":1705723200,"time":"2024-01-19
         23:00","temp_c":-12.0,"temp_f":10.3,"is_day":0,"condition":{"text":"Partly
         cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/116.png","code":1003},"wind_mph":9.2,"wind_kph":14.8,"wind_degree":290,"wind_dir":"WNW","pressure_mb":1029.0,"pressure_in":30.4,"precip_mm":0.0,"precip_in":0.0,"snow_cm":0.0,"humidity":80,"cloud":48,"feelslike_c":-19.2,"feelslike_f":-2.6,"windchill_c":-19.2,"windchill_f":-2.6,"heatindex_c":-12.0,"heatindex_f":10.3,"dewpoint_c":-15.0,"dewpoint_f":4.9,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":12.3,"gust_kph":19.8,"uv":1.0}]}]}}'
-  recorded_at: Mon, 15 Jan 2024 17:26:33 GMT
+  recorded_at: Mon, 15 Jan 2024 17:26:38 GMT
 recorded_with: VCR 6.2.0
