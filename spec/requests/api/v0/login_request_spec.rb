@@ -20,14 +20,14 @@ RSpec.describe "User Login Endpoint" do
       data = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(data).to have_key(:type)
-      expect(data[:type]).to eq("users")
+      expect(data[:type]).to eq("user")
       expect(data).to have_key(:id)
       expect(data[:id].to_i).to eq(@user.id)
       expect(data).to have_key(:attributes)
       expect(data[:attributes]).to have_key(:email)
       expect(data[:attributes][:email]).to eq("whatever@example.com")
       expect(data[:attributes]).to have_key(:api_key)
-      expect(data[:attributes][:api_key]).to eq("random_key")
+      expect(data[:attributes][:api_key]).to eq("t1h2i3s4_i5s6_l7e8g9i10t11")
     end
   end
 
@@ -73,7 +73,7 @@ RSpec.describe "User Login Endpoint" do
       expect(response.status).to eq(401)
 
       message = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(message).to eq({message: "Your credentials are invalid"})
     end
   end
