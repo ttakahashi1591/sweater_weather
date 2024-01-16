@@ -51,7 +51,7 @@ RSpec.describe "User Registration Endpoint" do
   
     it "will return an error if password and password confirmation do not match" do
       user_params = {
-        "email": "whatever@example.com",
+          "email": "whatever2@example.com",
           "password": "password",
           "password_confirmation": "NotMatchingPassword"
       }
