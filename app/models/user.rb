@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :email, 
-                        :password, 
+  validates_presence_of :email,  
                         :api_key
   validates :email, uniqueness: { case_sensitive: false }
 
