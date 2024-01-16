@@ -21,12 +21,12 @@ RSpec.describe User do
     it "generates an api key" do
       user = User.new(email: "whatever@example.com", password: "password", password_confirmation: "password")
 
-      user.generate_key
-      
+      user.generate_api_key
+
       user.save
 
       expect(user.api_key).to be_a(String)
-      expect(user.api_key.length).to eq(32)
+      expect(user.api_key.length).to eq(21)
     end
   end
 end
