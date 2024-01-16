@@ -4,9 +4,10 @@ class Api::V0::UsersController < ApplicationController
 
     user.generate_api_key
 
-    if user.save
+    begin 
+      user.save!
       render json: UserSerializer.new(user), status: :created
-    else
+    rescue ActiveRecord::RecordInvalid => error 
       render json: ErrorSerializer.new(error).to_json, status: :bad_request
     end
   end

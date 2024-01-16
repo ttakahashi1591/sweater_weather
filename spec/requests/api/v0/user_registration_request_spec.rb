@@ -14,18 +14,19 @@ RSpec.describe "User Registration Endpoint" do
       expect(response).to be_successful
       expect(response.status).to eq(201)
 
-      response = JSON.parse(response.body, symbolize_names: true)[:response]
+      response_data = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(response[:type]).to eq("user")
-      expect(response[:id]).to be_an(String)
-      expect(response[:attributes][:email]).to eq("whatever@example.com")
-      expect(response[:attributes][:api_key]).to be_a(String)
+      expect(response_data[:type]).to eq("user")
+      expect(response_data[:id]).to be_an(String)
+
+      expect(response_data[:attributes][:email]).to eq("whatever@example.com")
+      expect(response_data[:attributes][:api_key]).to be_a(String)
 
       user = User.last
 
       expect(user.email).to eq("whatever@example.com")
-      expect(user.id).to eq(response[:id].to_s)
-      expect(user.api_key).to eq(response[:attributes][:api_key])
+      expect(user.id).to eq(response_data[:id].to_i)
+      expect(user.api_key).to eq(response_data[:attributes][:api_key])
     end
   end
 
@@ -41,11 +42,11 @@ RSpec.describe "User Registration Endpoint" do
   
       expect(response.status).to eq(400)
   
-      response = JSON.parse(response.body, symbolize_names: true)
+      response_data = JSON.parse(response.body, symbolize_names: true)
   
-      expect(response).to have_key(:errors)
-      expect(response[:errors][0]).to have_key(:detail)
-      expect(response[:errors][0][:detail]).to eq("Validation failed: Email can't be blank, Password can't be blank")
+      expect(response_data).to have_key(:errors)
+      expect(response_data[:errors][0]).to have_key(:detail)
+      expect(response_data[:errors][0][:detail]).to eq("Validation failed: Email can't be blank, Password can't be blank")
     end
   
     it "will return an error if password and password confirmation do not match" do
@@ -59,11 +60,11 @@ RSpec.describe "User Registration Endpoint" do
   
       expect(response.status).to eq(400)
   
-      response = JSON.parse(response.body, symbolize_names: true)
+      response_data = JSON.parse(response.body, symbolize_names: true)
   
-      expect(response).to have_key(:errors)
-      expect(response[:errors][0]).to have_key(:detail)
-      expect(response[:errors][0][:detail]).to eq("Validation failed: Password confirmation doesn't match Password")
+      expect(response_data).to have_key(:errors)
+      expect(response_data[:errors][0]).to have_key(:detail)
+      expect(response_data[:errors][0][:detail]).to eq("Validation failed: Password confirmation doesn't match Password")
     end
   
     it "will return an error if the email entered is not unique" do
@@ -79,11 +80,11 @@ RSpec.describe "User Registration Endpoint" do
   
       expect(response.status).to eq(400)
   
-      response = JSON.parse(response.body, symbolize_names: true)
+      response_data = JSON.parse(response.body, symbolize_names: true)
   
-      expect(response).to have_key(:errors)
-      expect(response[:errors][0]).to have_key(:detail)
-      expect(response[:errors][0][:detail]).to eq("Validation failed: Email has already been taken")
+      expect(response_data).to have_key(:errors)
+      expect(response_data[:errors][0]).to have_key(:detail)
+      expect(response_data[:errors][0][:detail]).to eq("Validation failed: Email has already been taken")
     end
   end
 end
