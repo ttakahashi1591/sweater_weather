@@ -9,7 +9,7 @@ RSpec.describe "User Login Endpoint" do
     it "supports with a user loggin in" do
       user_params = {
         "email": "whatever@example.com",
-        "password": "password",
+        "password": "password"
       }
 
       post "/api/v0/sessions", params: user_params.to_json, headers: {'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
