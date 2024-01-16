@@ -40,5 +40,13 @@ module SweaterWeather
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # This setting will configure session_options for use below
+    config.session_store :cookie_store, key: '_interslice_session'
+
+    # This is required for all session management (regardless of session_store) and sets cookies for the request.
+    config.middleware.use ActionDispatch::Cookies
+
+    config.middleware.use config.session_store, config.session_options
   end
 end
