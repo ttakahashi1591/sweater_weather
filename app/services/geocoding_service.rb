@@ -14,4 +14,10 @@ class GeocodingService < ApplicationService
     
     json_parse(response)
   end
+
+  def directions_data(route)
+    response = get_url("directions/v2/route?from=#{route[:start]}&to=#{route[:end]}")
+
+    json_parse(response)
+  end
 end
