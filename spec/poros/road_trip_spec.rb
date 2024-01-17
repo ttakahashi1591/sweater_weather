@@ -52,5 +52,15 @@ RSpec.describe RoadTrip, :vcr do
 
       expect(chosen_hour).to eq(expected)
     end
+
+
+    it "will provide N/A for invalid route data if an arguement is not present" do
+      invalid_trip = RoadTrip.new({origin: "Cincinatti,OH", destination: "Paris, FR"})
+  
+      expect(invalid_trip.start_city).to eq("Cincinatti,OH")
+      expect(invalid_trip.end_city).to eq("Paris, FR")
+      expect(invalid_trip.travel_time).to eq("N/A")
+      expect(invalid_trip.weather_at_eta).to eq({})
+    end
   end
 end

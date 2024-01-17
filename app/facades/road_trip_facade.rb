@@ -6,6 +6,8 @@ class RoadTripFacade
   def get_route_info 
     directions = geocoding.route_data(@route)
 
+    return RoadTrip.new(@routes) if directions[:routeError]
+
     forecast = weather.get_forecast(directions[:boundingBox][:ul])
   
     RoadTrip.new(directions, forecast)

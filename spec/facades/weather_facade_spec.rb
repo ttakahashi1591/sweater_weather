@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe WeatherFacade, :vcr do
   it "supports with converting a city & state location into lat/lng coordinates" do
     facade = WeatherFacade.new 
-    coordinates = facade.coordinates("cincinatti,oh")
+    coordinates = facade.get_coordinates("cincinatti,oh")
 
     expect(coordinates).to be_a(Hash)
     expect(coordinates).to have_key(:lat)

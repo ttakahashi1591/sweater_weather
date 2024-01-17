@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Road trip endpoint" do
+RSpec.describe "Road Trip Endpoint", :vcr do
   before(:each) do
     user_params = {
       "email": "whatever@example.com",
@@ -20,7 +20,6 @@ RSpec.describe "Road trip endpoint" do
         "destination": "Chicago,IL",
         "api_key": @user.api_key
       }    
-
       post "/api/v0/road_trip", params: road_trip_params.to_json, headers: {'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
 
       expect(response).to be_successful
